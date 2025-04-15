@@ -21,6 +21,6 @@
   // description: [Throughout all genres of music, artists utilize specific techniques to create these emotional responses],
 )
 
-#include "../lit.typ"
+#include "./lit.typ"
 
 #bibliography("../citations.bib", full: true)

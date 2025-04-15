@@ -13,7 +13,7 @@ A study from the University of Geneva, renowned for their psychology research, f
 === Main Title theme from Star Wars: A New Hope - John Williams
 John Williams' _Main Title theme_ from _Star Wars: A New Hope_ is a cinematic icon, introducing listeners into the world of Star Wars. The theme's power lies in its ability to evoke a strong sense of emboldenment through instrumentation, melodic contour, and cultural recognition.
 
-#figure(image("./build/figs/star_wars.svg"))
+#figure(image("../build/figs/star_wars.svg"))
 
 Through the use of powerful brass instruments, the instrumentation in Star Wars' main theme creates a strong sense of power and importance. The prominent opening brass fanfare functions as an immediate and attention-grabbing call, generating anticipation and excitement. The bright timbre of the trumpets, often associated with heralding important events, combined with the resonant quality of other brass instruments, contributes to an overall feeling of significance and sets the stage for the epic narrative.
 
@@ -27,7 +27,7 @@ The theme's musical elements, when combined with its profound cultural significa
 But Emboldenment doesn't have to be all major chords and brass instruments. On the other side of emboldenment lies _Prelude in G Minor_, '_Alla Marcia_', composed by Sergei Rachmaninoff.
 
 #show image: it => {align(center, it)}
-#image("./build/figs/alla_marcia.svg")
+#image("../build/figs/alla_marcia.svg")
 
 The piece opens with a sequence of minor chords, and keeps this minor mood throughout the piece. Instead of portraying a sad or melancholy feel with minor chords, Rachmaninoff utilizes large chord voicings, a march style, and dynamic contrast to create an emboldening and heroic, yet slightly darker feel.
 
@@ -40,7 +40,7 @@ Through the use of large minor chord voicings, the march style, and dynamic cont
 === Don't Stop Me Now - Queen
 Everyone knows _Don't Stop Me Now_ by British rock band _Queen_. What people might not realize is that it is a masterclass in writing emboldening music. Through the use of syncopation and fast-paced lyrics, it creates a feeling of power and emboldenment in its own way.
 
-// #figure(image("./build/figs/dont_stop_me_now.svg"))
+// #figure(image("../build/figs/dont_stop_me_now.svg"))
 
 The lyrics are a main contribution to the emboldening feel of _Don't Stop Me Now_. As Freddie Mercury compares himself to shooting stars, tigers, and race cars, it creates a fast-paced feeling that feels powerful, making you want to tap your foot to the music. As mentioned previously, this theory of "Music, Mood, and Movement," originally identified by Murrock, can be seen in all kinds of fast-paced, emboldening music @mmm.
 
@@ -59,7 +59,7 @@ This type of Nostalgia is juxtapositive. How can a song feel Nostalgic, while no
 
 But what technical elements contribute to this safe, stable emotion? Through the use of perfectly synthesized instruments, carefully crafted melodies, and heart-felt lyrics, Porter Robinson is able to craft these sorts of feelings in his music.
 
-#figure(image("./build/figs/shelter.svg"))
+#figure(image("../build/figs/shelter.svg"))
 
 The beginning of the song uses warm, synthesized pad sounds, along with a melody based on vocal chopping, to create its signature sound. Vocal Chopping is an electronic production technique that entails taking a vocal sample and playing sections of it out-of-order to make a new melody. This method of creating something new out of something old is an apt metaphor for nostalgia, a "longing for the past," by taking something from the past and using it to make something new.
 
@@ -93,7 +93,7 @@ Electronic music is based around the idea of a "drop." A song will build up, usi
 
 Snare Builds create tension as they speed up, forming anticipation for the drop. The snare build from _Fire_ by Elektronomia is a great example of this. It starts with straight quarter notes, building to eighth notes, sixteenth notes, and even thirty-second notes at the end.
 
-#figure(image("./build/figs/fire.svg"))
+#figure(image("../build/figs/fire.svg"))
 
 But snare builds are only one method of forming anticipation. Another one is automation. Automation refers to slowly tweaking a parameter about the sound to change the way it sounds. High Pass filters are a common choice to automate. A High Pass filter will filter out lower frequencies, while keeping higher frequencies. Raising the amount of low frequencies that are cut out makes the instrument sound like it is fading away. This makes the drop feel more powerful when the full range of frequencies come back.
 
