@@ -11,7 +11,7 @@ build/figs:
 
 SVG_FILES := $(patsubst figs/%.ly,build/figs/%.svg,$(wildcard figs/*.ly))
 
-build/figs/%.svg: essay/figs/%.ly figure-preamble.ly | build/figs
+build/figs/%.svg: figs/%.ly figure-preamble.ly | build/figs
 	rm -f $@
 	lilypond -dno-point-and-click -dbackend=svg -o "build/figs/$$(basename $@ .svg)" $<
 

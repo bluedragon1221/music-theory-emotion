@@ -75,7 +75,6 @@
     } else {
       to-string(authors).trim(" ", at: start).trim(" ", at: end)
     },
-    description: if abstract-as-description { abstract },
     keywords: keywords,
   )
 
@@ -236,11 +235,6 @@
     breakable: true,
     outset: (y: 7pt),
     radius: (left: 0pt, right: 6pt),
-  )
-
-  show raw: set text(
-    font: "Cascadia Code",
-    size: 10pt,
   )
 
   show raw.where(block: true): set par(leading: 1em)

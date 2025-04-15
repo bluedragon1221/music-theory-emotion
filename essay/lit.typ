@@ -78,7 +78,7 @@ A big contributor to this song's nostalgic feeling is its usage of empty space. 
 
 The cultural significance of this piece cannot go unmentioned. To players of _Minecraft_, this song hold unique sentimental value. It reminds players of their times spent playing the game, chopping trees and building houses. A popular video game blog, Kotaku, placed the album _Minecraft: Volume Alpha_, which contains _Sweden_, as one of the best video game soundtracks from 2011 @swedenReview. This shows its cultural and emotional significance.
 
-_Sweden_ is a nostalgic piece; not just because of its cultural significance, but also because of its use of empty space and slow tempo that creates a contemplative and ultimately nostalgic feeling.
+_Sweden_ is a nostalgic piece; not just because of its cultural significance, but also because of its use of empty space and slow tempo that creates a contemplative and ultimately nostalgic feeling. 
 
 === Lo-Fi Music // ^lo
 Lo-Fi is a new style of music meant to be played in the background of other tasks, such as homework or playing video games. Through sampling, background noises, and immitating old sounds, Lo-Fi creates its undeniably nostalgic feeling.
