@@ -1,5 +1,5 @@
 \version "2.24.4"
-\include "../figure-preamble.ly"
+\include "../../figure-preamble.ly"
 
 {
 	\numericTimeSignature
@@ -16,6 +16,8 @@
 			c1
 		}
 		\new Voice = "melody" {
+			\key c \major
+		
 			<e' c'>2 g2
 			<<
 				{ \voiceOne b2 a4. a8 }

@@ -1,4 +1,4 @@
-\include "../figure-preamble.ly"
+\include "../../figure-preamble.ly"
 
 {
 	\version "2.24.4"
