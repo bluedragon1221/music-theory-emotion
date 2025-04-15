@@ -5,7 +5,7 @@ clean:
 	rm -rf build/
 .PHONY: clean
 
-# FIGURES
+# Figures
 build/figs:
 	mkdir -p build/figs
 
@@ -15,15 +15,11 @@ build/figs/%.svg: figs/%.ly figure-preamble.ly | build/figs
 	rm -f $@
 	lilypond -dno-point-and-click -dbackend=svg -o "build/figs/$$(basename $@ .svg)" $<
 
-# ESSAY
+# Typst targets
+build/%.pdf:
+	typst compile --root . $< $@
+
 build/essay.pdf: essay/main.typ lit.typ $(SVG_FILES) citations.bib | build
-	typst compile --root . essay/main.typ build/essay.pdf
-
-# ANNOTATED BIBLIOGRAPHY
-build/annotated_bib.pdf: annotated_bib/annotated_bib.typ citations.bib | build
-	typst compile --root . $< $@
-
-# SLIDES
+build/annotated_bib.pdf: annotated_bib/main.typ citations.bib | build
 build/slides.pdf: slides/main.typ lit.typ $(SVG_FILES) citations.bib | build
-	typst compile --root . $< $@
 

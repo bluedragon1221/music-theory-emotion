@@ -1,4 +1,4 @@
-#import "../versatile-apa/lib.typ": *
+#import "../deps/versatile-apa/lib.typ": *
 #set heading(numbering: "1. ")
 #set page(
   paper: "us-letter",
