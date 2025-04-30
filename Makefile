@@ -1,23 +1,30 @@
-build:
-	mkdir -p build
+OBJDIR := build
+
+$(OBJDIR):
+	mkdir -p $(OBJDIR)
 
 # Figures
-build/figs:
-	mkdir -p build/figs
+$(OBJDIR)/figs:
+	mkdir -p $(OBJDIR)/figs
 
-build/figs/%.svg: figs/%.ly figure-preamble.ly | build/figs
+$(OBJDIR)/figs_png:
+	mkdir -p $(OBJDIR)/figs_png
+
+$(OBJDIR)/figs/%.svg: figs/%.ly figure-preamble.ly | $(OBJDIR)/figs
 	rm -f $@
-	lilypond -dno-point-and-click --svg -o "build/figs/$$(basename $@ .svg)" $<
+	lilypond -dno-point-and-click --svg -o "$(OBJDIR)/figs/$$(basename $@ .svg)" $<
+
+# Figures for Google Slide
+$(OBJDIR)/figs_png/%.png: $(OBJDIR)/figs/%.svg | $(OBJDIR)/figs_png
+	rm -f $@
+	inkscape --export-filename="$@" $<
 
 # Typst targets
 %.pdf::
 	typst compile --root . $< $@
 
 ESSAY_FIGS := $(shell ./find_figs.sh essay/lit.typ)
-build/essay.pdf: essay/main.typ essay/lit.typ $(ESSAY_FIGS) citations.bib | build
+$(OBJDIR)/essay.pdf: essay/main.typ essay/lit.typ $(ESSAY_FIGS) citations.bib | $(OBJDIR)
 
-build/annotated_bib.pdf: annotated_bib/main.typ citations.bib | build
-
-SLIDES_DEPS := $(shell ./find_figs.sh slides/lit.typ)
-build/slides.pdf: slides/main.typ slides/lit.typ $(SVG_FILES) citations.bib | build
+$(OBJDIR)/annotated_bib.pdf: annotated_bib/main.typ citations.bib | $(OBJDIR)
 

@@ -22,8 +22,8 @@
   - [X] Don't Stop Me Now - Queen (^dq)
     - [X] Intro
     - [X] Lyrics
-    - [-] Syncopation
-    - [-] Conclusion
+    - [X] Syncopation
+    - [X] Conclusion
 - [-] Emotion: Nostalgia (^n)
   - [X] Shelter - Porter Robinson, Madeon (^pr)
     - [X] Intro
@@ -34,12 +34,12 @@
     - [X] Melody
     - [X] Lyrics
     - [X] Conclusion
-  - [ ] Sweden - C418 (^c4)
+  - [-] Sweden - C418 (^c4)
     - [X] Intro
     - [ ] (Figure)
     - [X] Slow + Chords (Empty space)
-    - [ ] Cultural Recognition
-    - [ ] Conclusion
+    - [X] Cultural Recognition
+    - [X] Conclusion
   - [X] Lo-Fi Music (^lo)
 - [ ] Emotional build up (^e)
   - [ ] Electronic Music (^em)
@@ -48,12 +48,14 @@
     - [X] (Figure)
     - [X] Automation
 	- [-] Conclusion
-  - [ ] Classical Music (^cm)
-    - [ ] Intro
-    - [ ] Glissandos
-    - [ ] Chord Sequences
-    - [ ] Conclusion
-- [ ] Music that doesn't use theory (^a)
+  - [-] Classical Music (^cm)
+    - [X] Intro
+    - [X] Glissandos
+    - [ ] Figure
+    - [X] Chord Sequences
+    - [ ] Figure
+    - [-] Conclusion
+- [-] Music that doesn't use theory (^a)
   - [X] Aphex Twin
   - [X] Punk Rock
 - [ ] Conclusion
