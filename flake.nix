@@ -17,7 +17,10 @@
       inkscape
     ];
 
-    srcdir = ./src;
+    srcdir = builtins.fetchGit {
+      url = "https://github.com/bluedragon1221/music-theory-emotion";
+      rev = "3e5394b2e3688b7c003b666dbfdb93edccc93f6d";
+    };
 
     patch = pkgs.stdenv.mkDerivation {
       name = "music-theory-emotion-patchdir";
@@ -26,7 +29,7 @@
 
       buildPhase = ''
         mkdir -p $out
-        make --makefile=$src/Makefile PATDIR=$out/patch SRCDIR=$src patch
+        make --makefile=$src/Makefile PATDIR=$out/patch SRCDIR=$src/src patch
       '';
     };
 
