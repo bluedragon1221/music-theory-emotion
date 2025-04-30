@@ -1,30 +1,58 @@
+# Build stages
+# 1. SRCDIR - main.typ, lit.typ, figs/*.ly
+# 2. PATDIR - cp main.typ lit.typ PATDIR/, figs/*.svg
+# 3. OBJDIR - essay.pdf
+
+SRCDIR := src
+
+PATDIR := patch
+
+$(PATDIR):
+	mkdir -p $(PATDIR)
+
+$(PATDIR)/essay:
+	mkdir -p $(PATDIR)/essay
+
+$(PATDIR)/figs:
+	mkdir -p $(PATDIR)/figs
+
+# Copy files from SRCDIR
+$(PATDIR)/%:: $(SRCDIR)/%
+	cp -r $< $@
+$(PATDIR)/essay/main.typ: $(SRCDIR)/essay/main.typ | $(PATDIR)/essay 
+$(PATDIR)/essay/lit.typ:  $(SRCDIR)/essay/lit.typ  | $(PATDIR)/essay
+$(PATDIR)/citations.bib:  $(SRCDIR)/citations.bib  | $(PATDIR)
+$(PATDIR)/deps:           $(SRCDIR)/deps           | $(PATDIR)
+
+# Recipe for all figures
+$(PATDIR)/figs/%.svg: $(SRCDIR)/figs/%.ly $(SRCDIR)/figure-preamble.ly | $(PATDIR)/figs
+	rm -rf $@
+	lilypond -dno-point-and-click --svg -o "$(PATDIR)/figs/$$(basename $@ .svg)" $<
+
+ESSAY_FIGS = $(shell PATDIR=$(PATDIR) $(SRCDIR)/find_figs.sh $(SRCDIR)/essay/lit.typ)
+
+patch: $(PATDIR)/essay/main.typ $(PATDIR)/essay/lit.typ $(PATDIR)/citations.bib $(PATDIR)/deps $(ESSAY_FIGS)
+.PHONY: patch
+
 OBJDIR := build
 
 $(OBJDIR):
 	mkdir -p $(OBJDIR)
 
-# Figures
-$(OBJDIR)/figs:
-	mkdir -p $(OBJDIR)/figs
-
 $(OBJDIR)/figs_png:
 	mkdir -p $(OBJDIR)/figs_png
 
-$(OBJDIR)/figs/%.svg: figs/%.ly figure-preamble.ly | $(OBJDIR)/figs
-	rm -f $@
-	lilypond -dno-point-and-click --svg -o "$(OBJDIR)/figs/$$(basename $@ .svg)" $<
-
 # Figures for Google Slide
-$(OBJDIR)/figs_png/%.png: $(OBJDIR)/figs/%.svg | $(OBJDIR)/figs_png
+$(OBJDIR)/figs_png/%.png: $(PATDIR)/figs/%.svg | $(OBJDIR)/figs_png
 	rm -f $@
 	inkscape --export-filename="$@" $<
 
-# Typst targets
-%.pdf::
-	typst compile --root . $< $@
+# Essay
+$(OBJDIR)/essay.pdf: $(PATDIR)/essay/main.typ $(PATDIR)/essay/lit.typ $(PATDIR)/citations.bib $(PATDIR)/deps $(ESSAY_FIGS) | $(OBJDIR)
+	typst compile --root $(PATDIR) $< $@
 
-ESSAY_FIGS := $(shell ./find_figs.sh essay/lit.typ)
-$(OBJDIR)/essay.pdf: essay/main.typ essay/lit.typ $(ESSAY_FIGS) citations.bib | $(OBJDIR)
+$(OBJDIR)/annotated_bib.pdf: $(PATDIR)/annotated_bib/main.typ $(PATDIR)/deps | $(OBJDIR)
+	typst compile --root $(PATDIR) $< $@
 
-$(OBJDIR)/annotated_bib.pdf: annotated_bib/main.typ citations.bib | $(OBJDIR)
-
+essay: $(OBJDIR)/essay.pdf
+.PHONY: essay

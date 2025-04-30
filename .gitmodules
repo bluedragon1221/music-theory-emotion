@@ -1,3 +1,0 @@
-[submodule "deps/slydst"]
-	path = deps/slydst
-	url = https://github.com/glambrechts/slydst
